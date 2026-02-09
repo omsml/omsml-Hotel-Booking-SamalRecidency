@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>SAMAL | RECIDENCY</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__bar">
+        <div class="nav__header">
+          <div class="logo nav__logo">
+            <div>SR</div>
+            <span>SAMAL<br />RECIDENCY</span>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#rooms">Room</a></li>
+          <li><a href="#book">Book</a></li>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="header" id="home">
+      <div class="section__container header__container">
+        <p class="section__subheader">ABOUT US</p>
+        <h1>The Luxury ;<br />You Can Feel</h1>
+        <button class="btn"> <a href="#book">Book a Room</a> </button>
+      </div>
+    </header>
+
+<!-- about section -->
+    <section class="about" id="about">
+      <div class="section__container about__container">
+        <div class="about__grid">
+          <div class="about__image">
+            <img src="assets/about-1.jpg" alt="about" />
+          </div>
+          <div class="about__card">
+            <span><i class="ri-user-line"></i></span>
+            <h4>Strong Team</h4>
+            <p>
+              Unlocking Hospitality Excellence And Ensures Your Perfect Stay
+            </p>
+          </div>
+          <div class="about__image">
+            <img src="assets/about-2.jpg" alt="about" />
+          </div>
+          <div class="about__card">
+            <span><i class="ri-calendar-check-line"></i></span>
+            <h4>Luxury Room</h4>
+            <p>Experience Unrivaled Luxury at Our Exquisite Luxury Rooms</p>
+          </div>
+        </div>
+        <div class="about__content">
+          <p class="section__subheader">ABOUT US</p>
+          <h2 class="section__header">Discover Our Underground</h2>
+          <p class="section__description">
+            Welcome to a hidden realm of extraordinary accommodations where
+            luxury, comfort, and adventure converge. Our underground hotels
+            offer an unparalleled escape from the ordinary, inviting you to
+            explore a subterranean world of wonders.
+          </p>
+          <button class="btn"> <a href="#book">Book a Room</a> </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="room__container" id="rooms">
+      <p class="section__subheader">ROOMS</p>
+      <h2 class="section__header">Hand Picked Rooms</h2>
+      <div class="room__grid">
+        <div class="room__card">
+          <img src="assets/room-1.jpg" alt="room" />
+          <div class="room__card__details">
+            <div>
+              <h4>Deluxe Suite</h4>
+              <p>Well-appointed rooms designed for guests who desire a more.</p>
+            </div>
+            <h3>$399<span>/night</span></h3>
+          </div>
+        </div>
+        <div class="room__card">
+          <img src="assets/room-2.jpg" alt="room" />
+          <div class="room__card__details">
+            <div>
+              <h4>Family Suite</h4>
+              <p>Consist of multiple rooms and a common living area.</p>
+            </div>
+            <h3>$599<span>/night</span></h3>
+          </div>
+        </div>
+        <div class="room__card">
+          <img src="assets/room-3.jpg" alt="room" />
+          <div class="room__card__details">
+            <div>
+              <h4>Luxury Penthouse</h4>
+              <p>
+                Top-tier accommodations usually on the highest floors of a
+                hotel.
+              </p>
+            </div>
+            <h3>$799<span>/night</span></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room Book -->
+    <section class="booking" id="book">
+  <div class="section__container booking__container">
+   <form id="bookingForm">
+  <div class="input__group">
+    <label for="arrival">Arrival Date</label>
+    <input type="text" id="arrival" placeholder="DD/MM/YYYY" autocomplete="off" required />
+  </div>
+
+  <div class="input__group">
+    <label for="departure">Departure Date</label>
+    <input type="text" id="departure" placeholder="DD/MM/YYYY" autocomplete="off" required />
+  </div>
+
+  <div class="input__group">
+    <label for="guests">Guests</label>
+    <input type="number" id="guests" placeholder="No Of Guests" min="1" value="2" required />
+  </div>
+
+  <div class="input__group">
+    <label for="room">Select Room</label>
+    <select id="room" name="room" required>
+      <option value="" disabled selected>Choose room type</option>
+      <option value="deluxe-suite">Deluxe Suite ($399)</option>
+      <option value="family-suite">Family Suite ($599)</option>
+      <option value="luxury-penthouse">Luxury Penthouse ($799)</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn">Check Availability</button>
+</form>
+  </div>
+</section>
+<div class="modal" id="priceModal">
+  <div class="modal__content">
+    <h3>Room Price Details</h3>
+    <p id="priceText"></p>
+
+    <div class="modal__actions">
+      <button id="payBtn" class="btn">Do Payment</button>
+      <button id="exitBtn" class="btn">Exit</button>
+    </div>
+  </div>
+</div>
+<!-- Payment Modal -->
+<div class="modal" id="paymentModal">
+  <div class="modal__content">
+    <h3>Select Payment Method</h3>
+
+    <div class="modal__actions payment__options">
+      <button class="btn paymentBtn" data-method="upi">UPI</button>
+      <button class="btn paymentBtn" data-method="netbanking">Net Banking</button>
+      <button class="btn paymentBtn" data-method="card">Credit / Debit Card</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="successModal">
+  <div class="modal__content">
+    <h3>Booking Successful 🎉</h3>
+    <p>Room booked successfully.  
+    You can contact the manager for further assistance.</p>
+
+    <button id="successExitBtn" class="btn">Exit</button>
+  </div>
+</div>
+
+
+    <section class="section__container feature__container" id="feature">
+      <p class="section__subheader">FACILITIES</p>
+      <h2 class="section__header">Core Features</h2>
+      <div class="feature__grid">
+        <div class="feature__card">
+          <span><i class="ri-thumb-up-line"></i></span>
+          <h4>Have High Rating</h4>
+          <p>
+            We take pride in curating a selection of hotels that consistently
+            receive high ratings and positive reviews.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-time-line"></i></span>
+          <h4>Quite Hours</h4>
+          <p>
+            We understand that peace and uninterrupted rest are essential for a
+            rejuvenating experience.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-map-pin-line"></i></span>
+          <h4>Best Location</h4>
+          <p>
+            At our hotel booking website, we take pride in offering
+            accommodations in the most prime and sought-after locations.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-close-circle-line"></i></span>
+          <h4>Free Cancellation</h4>
+          <p>
+            We understand that travel plans can change unexpectedly, which is
+            why we offer the flexibility of free cancellation.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-wallet-line"></i></span>
+          <h4>Payment Options</h4>
+          <p>
+            Our hotel booking website offers a range of convenient payment
+            options to suit your preferences.
+          </p>
+        </div>
+        <div class="feature__card">
+          <span><i class="ri-coupon-line"></i></span>
+          <h4>Special Offers</h4>
+          <p>
+            Whether you're planning a romantic getaway, or a business trip, our
+            carefully curated special offers cater to all your needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo footer__logo">
+            <div>SR</div>
+            <span>SAMAL<br />RECIDENCY</span>
+          </div>
+          <p class="section__description">
+          Our hotel offers a perfect blend of modern luxury and homely comfort.
+          Enjoy a peaceful stay with premium amenities tailored for your every need.
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-youtube-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <div class="footer__links">
+            <li><a href="#">Online Booking</a></li>
+            <li><a href="#">Room Customization</a></li>
+            <li><a href="#">Virtual Tours</a></li>
+            <li><a href="#">Special Offers</a></li>
+            <li><a href="#">Concierge Services</a></li>
+            <li><a href="#">Customer Support</a></li>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <div class="footer__links">
+            <li>
+              <span><i class="ri-phone-fill"></i></span>
+              <div>
+                <h5>Phone Number</h5>
+                <p>+91 9668768400</p>
+              </div>
+            </li>
+            <li>
+              <span><i class="ri-record-mail-line"></i></span>
+              <div>
+                <h5>Email</h5>
+                <p>samalrecidency@gmail.com</p>
+              </div>
+            </li>
+            <li>
+              <span><i class="ri-map-pin-2-fill"></i></span>
+              <div>
+                <h5>Location</h5>
+                <p>BBSR , OD</p>
+              </div>
+            </li>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2026 SAMAL | RECIDENCY. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+    <!-- Flatpickr CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#arrival", {
+      dateFormat: "d/m/Y",
+      minDate: "today",
+      allowInput: false,
+    });
+
+    flatpickr("#departure", {
+      dateFormat: "d/m/Y",
+      minDate: "today",
+      allowInput: false,
+    });
+  });
+</script>
+
+
+  </body>
+</html>
